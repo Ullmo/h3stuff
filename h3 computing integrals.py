@@ -48,9 +48,8 @@ def plotter(n):
     k=[None]*n
     for i in range (n):
         x=random()**(1./2)
-        y=random()*2*x
-        if y<1-math.exp(-x):
-            k[i]=[x,y]
+        y=random()*x
+        k[i]=[x,y]
     k=filter(None, k)
     k=np.transpose(k)
     return k
@@ -59,5 +58,3 @@ ex= plotter(6000)
 
 plt.scatter(ex[0],ex[1])
 plt.show()
-
-print plotter(10)
